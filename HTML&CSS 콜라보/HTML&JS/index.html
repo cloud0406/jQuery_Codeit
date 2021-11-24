@@ -9,18 +9,20 @@
   <img id="logo" src="images/logo.png" width="165" height="58">
   
   <div id="menu">
+    <!-- 마우스로 클릭하면(이벤트) 사진이 바뀐다(이벤트 핸들링) -->
+    <!-- 마우스로 클릭하는 행동이 '이벤트'이고, 이 때 동작하게 되는 clickHome()을 '이벤트 핸들러'라고함 -->
     <a id="home" onclick="clickHome()">Home</a>
     <a id="seoul"onclick="clickSeoul()">Seoul</a>
     <a id="tokyo" onclick="clickTokyo()">Tokyo</a>
     <a id="paris" onclick="clickParis()">Paris</a>
   </div>
 
-  <img id="photo" src="images/home.png" width="90%">
+  <img id="photo" src="images/home.png" width="90%" onmouseenter="mouseEnterPhoto();" onmouseleave="mouseLeavePhoto();">
 
-  // jquery 사용 (좀 더 간편하게 코딩하기 위해) - jquer cdn 홈페이지
+   <!-- jquery 사용 (좀 더 간편하게 코딩하기 위해) - jquer cdn 홈페이지 -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
-  //HTML 코드부분에는 JS코드를 최대한 줄여서 깔끔하게 정리
+  <!-- HTML 코드부분에는 JS코드를 최대한 줄여서 깔끔하게 정리 -->
   <script>
     //사진을 바꿔주는 함수
     function clickHome() {
@@ -85,6 +87,15 @@
       // document.getElementById('home').style.fontWeight = 'normal';
       // document.getElementById('seoul').style.fontWeight = 'normal';
       // document.getElementById('tokyo').style.fontWeight = 'normal';
+    }
+
+    // 사진에 그림자
+    function mouseEnterPhoto() {
+      $('#photo').css('box-shadow','5px 10px');
+    }
+
+    function mouseLeavePhoto() {
+      $('#photo').css('box-shadow','none');
     }
   </script>
 </body>
