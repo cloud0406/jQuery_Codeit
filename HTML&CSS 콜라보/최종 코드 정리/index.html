@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Travel Website</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <img id="logo" src="images/logo.png" width="165" height="58">
+  
+  <div id="menu">
+    <a id="home">Home</a>
+    <a id="seoul">Seoul</a>
+    <a id="tokyo">Tokyo</a>
+    <a id="paris">Paris</a>
+  </div>
+ 
+  <img id="photo" src="images/home.png" width="90%">
+
+   <!-- jquery 사용 (좀 더 간편하게 코딩하기 위해) - jquer cdn 홈페이지 -->
+   <!-- 요즘 jquery는 점차 지양하는 추세 -> angular,react,vue 등을 사용
+   jquery 없이 순수 JS코드로 사용하는 법도 익히기 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    function clickHome() {
+      $('#photo').attr('src','images/home.png');
+
+      $('#home').css('font-weight','bold');
+      $('#seoul').css('font-weight','normal');
+      $('#tokyo').css('font-weight','normal');
+      $('#paris').css('font-weight','normal'); 
+    }
+    function clickSeoul() {
+      $('#photo').attr('src','images/seoul.png'); 
+
+      $('#home').css('font-weight','normal');
+      $('#seoul').css('font-weight','bold');
+      $('#tokyo').css('font-weight','normal');
+      $('#paris').css('font-weight','normal');
+    }
+    function clickTokyo() {
+      $('#photo').attr('src','images/tokyo.png');
+
+      $('#home').css('font-weight','noraml');
+      $('#seoul').css('font-weight','normal');
+      $('#tokyo').css('font-weight','bold');
+      $('#paris').css('font-weight','normal');
+    }
+    function clickParis() {
+      $('#photo').attr('src','images/paris.png');
+
+      $('#home').css('font-weight','normal');
+      $('#seoul').css('font-weight','normal');
+      $('#tokyo').css('font-weight','normal');
+      $('#paris').css('font-weight','bold');
+    }
+
+    function mouseEnterPhoto() {
+      $('#photo').css('box-shadow','5px 10px');
+    }
+    function mouseLeavePhoto() {
+      $('#photo').css('box-shadow','none');
+    }
+
+    $('#home').on('click',clickHome); 
+    $('#seoul').on('click',clickSeoul);
+    $('#tokyo').on('click',clickTokyo);
+    $('#paris').on('click',clickParis);
+
+    $('#photo').on('mouseenter',mouseEnterPhoto);
+    $('#photo').on('mouseleave',mouseLeavePhoto);
+  </script>
+</body>
+</html>
