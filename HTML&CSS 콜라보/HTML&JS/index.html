@@ -113,6 +113,12 @@
     $('#tokyo').on('click',clickTokyo);
     $('#paris').on('click',clickParis);
 
+    // ** 위의 jQuery코드 순수 Vanilla JavaScript로 구현시 아래와 같음 **
+    // document.getElementById('home').addEventListener('click', clickHome);
+    // document.getElementById('seoul').addEventListener('click', clickSeoul);
+    // document.getElementById('tokyo').addEventListener('click', clickTokyo);
+    // document.getElementById('paris').addEventListener('click', clickParis);
+
     // 사진에 마우스 올려둘때 그림자 넣었다, 뺐다 하는 함수
     $('#photo').on('mouseenter',mouseEnterPhoto);
     $('#photo').on('mouseleave',mouseLeavePhoto);
