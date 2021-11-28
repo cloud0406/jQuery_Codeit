@@ -63,6 +63,21 @@
       $('#photo').css('box-shadow','none');
     }
 
+    function processKeyEvent(event) {
+      if (event['key'] === '1') {
+        clickHome();
+      } else if (event['key'] === '2'){
+        clickSeoul();
+      }
+      else if (event['key'] === '3'){
+        clickTokyo();
+      }
+      else if (event['key'] === '4'){
+        clickParis();
+      }
+    }
+
+
     $('#home').on('click',clickHome); 
     $('#seoul').on('click',clickSeoul);
     $('#tokyo').on('click',clickTokyo);
@@ -70,6 +85,8 @@
 
     $('#photo').on('mouseenter',mouseEnterPhoto);
     $('#photo').on('mouseleave',mouseLeavePhoto);
+
+    $(document).on('keydown',processKeyEvent);
   </script>
 </body>
 </html>
