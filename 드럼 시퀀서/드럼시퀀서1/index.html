@@ -79,6 +79,17 @@
         loop.pause();
         loop.currentTime=0;
       });
+
+      // 키보드 
+      //  (# -> id태그)  , (). -> class태그)
+      $(document).on('keydown',function(event) { // event는 사용자가 누르는 키보드 키
+        $('#cell' + event.key).addClass('playing'); // ex) 1을 키보드로 누르면 'cell1'을 id로 가지는 요소에 'playing' 클래스를 추가해줌
+      });
+
+      $(document).on('keyup',function() { // 누르던 키를 떼면 동작
+        $('.cell').removeClass('playing'); // 모든 'cell' 클래스 요소들에서 'playing' 클래스를 없앰
+      });
+
     </script>
   </body>
 </html>
