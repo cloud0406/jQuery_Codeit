@@ -69,6 +69,18 @@
       integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
       crossorigin="anonymous"></script>
     <script>
+      let audioFiles = [];
+      audioFiles.push(new Audio("audio/loop.mp3")); // 0번 인덱스부터 아래까지 쭉 채움
+      audioFiles.push(new Audio("audio/loop2.mp3"));
+      audioFiles.push(new Audio("audio/loop.mp3"));
+      audioFiles.push(new Audio("audio/loop2.mp3"));
+      audioFiles.push(new Audio("audio/loop.mp3"));
+      audioFiles.push(new Audio("audio/loop2.mp3"));
+      audioFiles.push(new Audio("audio/loop.mp3"));
+      audioFiles.push(new Audio("audio/loop2.mp3"));
+      audioFiles.push(new Audio("audio/loop.mp3")); // 8번 인덱스까지 채움 (총 9개)
+
+
       let loop = new Audio('audio/loop.mp3');
       
       $('#play-btn').on('click',function() {
@@ -83,7 +95,13 @@
       // 키보드 
       //  (# -> id태그)  , (). -> class태그)
       $(document).on('keydown',function(event) { // event는 사용자가 누르는 키보드 키
+        if (Number(event.key) >= 1 && Number(event.key) <= 9){ // 숫자 외에 다른 키보드 누르는 것 방지
         $('#cell' + event.key).addClass('playing'); // ex) 1을 키보드로 누르면 'cell1'을 id로 가지는 요소에 'playing' 클래스를 추가해줌
+        let cur = audioFiles[Number(event.key)-1];
+        cur.currentTime = 0;
+        cur.play();
+
+        }
       });
 
       $(document).on('keyup',function() { // 누르던 키를 떼면 동작
