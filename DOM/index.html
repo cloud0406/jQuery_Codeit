@@ -1,0 +1,31 @@
+<!-- 브라우저는 해당 코드를 보고 내부적으로 정리함 -->
+<!DOCTYPE html>
+<!-- html 태그를 보고 태그에 해당하는 객체를 생성 -->
+<html> 
+  <!-- 마찬 가지로 head 태그를 보고 객체를 생성하여 상위의 html 태그와 연결해줌 / html-head -->
+  <head>
+    <!-- html-head-title 연결 -->
+    <title>로그인</title>
+    <!-- html-head-meta 연결 -->
+    <meta charset="utf-8">
+  </head>
+
+  <!-- html-body 연결 -->
+  <body>
+    <!-- html-body-form 연결 -->
+    <form id="login-form">
+      <!-- html-body-form-input 연결 -->
+      <input name="email" class="text-field" placeholder="이메일">
+      <input type="submit" value="로그인" id="submit-btn">
+    </form>
+  </body>
+</html>
+
+<!-- 각 태그에는 각 태그의 속성들도 들어가 있음
+
+ex) input 태그 : name, class, placeholder... 등
+
+위와 같이 가족 관계처럼 정리된 구조를 tree구조 , 문서 객체 모델(DOM) 구조라 부름
+
+즉, 브라우저는 코드를 살피며 코드를 DOM 구조로 정리한 후 DOM의 객체들을 시각화하여
+사용자에게 보여줌 -->
