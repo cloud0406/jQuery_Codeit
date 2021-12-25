@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <button id="hello">Hello Codeit!</button>
+
+  <ul id="todo-list">
+    <li class="item">청소</li>
+    <li class="item">코딩</li>
+    <li class="item">숙제</li>
+    <li class="item">영화</li>
+  </ul>
+
+  <script 
+    src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+    crossorigin="anonymous">
+  </script>
+  
+  <script>
+  // jQuery 사용하여 요소에 접근 , '.' 뒷부분은 동작 부분
+  $('#hello').on('click',sayHello);
+  
+  function sayHello() {
+    alert($('#hello').text());
+    $('#hello').css('background','#7f8ff4'); // hello라는 id에 접근, css 속성을 변경하도록 동작
+  }
+  </script>
+</body>
+</html>
