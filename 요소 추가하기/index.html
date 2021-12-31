@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <button id="hello">Hello Codeit!</button>
+
+  <ul id="todo-list">
+    <li class="item"><b>청소</b></li>
+    <li class="item"><b>코딩</b></li>
+    <li class="item"><b>숙제</b></li>
+    <li class="item"><b>영화</b></li>
+  </ul>
+
+  <script 
+    src="https://code.jquery.com/jquery-3.2.1.min.js" 
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" 
+    crossorigin="anonymous"></script>
+  <script>
+    $('#hello').on('click', sayHello);
+    
+    function sayHello() {
+      alert($('#hello').text());
+      $('#hello').css('background', '#7f8ff4');
+    }
+
+    // ** after와 before로 새로 생긴 요소는 서로 '형제' 관계 
+
+    // after 사용하여 모든 li 요소 뒤에 아래 해당 요소 추가시킴
+    $('li').after('<li class="item">모든 li 요소 뒤에 추가</li>');
+    $('#todo-list li:last-child').after('<li class="item">after 사용하여 id todo-list의 마지막 요소 뒤에 추가</li>');
+
+    // before 은 after와 반대로 해당 요소 앞에 추가
+    $('#todo-list li:last-child').before('<li class="item">before 사용하여 id todo-list의 마지막 요소 앞에 추가</li>');
+    
+
+    // ** append와 prepend로 새로 생긴 요소는 서로 '자식' 관계 
+
+    // append 사용하여 아래 해당 요소를 ul태그의 마지막 자식으로 넣음
+    $('ul').append('<li class="item">append 사용하여 ul태그의 마지막 자식으로 넣음</li>')
+
+    // prepend 사용하여 아래 해당 요소를 ul태그의 첫 번째 자식으로 넣음
+    $('ul').prepend('<li class="item">prepend 사용하여 ul태그의 첫 번째 자식으로 넣음</li>')
+  </script>
+</body>
+</html>
