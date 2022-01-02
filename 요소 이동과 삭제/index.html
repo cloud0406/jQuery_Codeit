@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery</title>
+  <meta charset="UTF-8">
+</head>
+<body>
+  <button id="hello">Hello Codeit!</button>
+
+  <ul id="todo-list">
+    <li id="cleaning" class="item">청소</li>
+    <li id="coding" class="item important">코딩</li>
+    <li id="homework" class="item important">숙제</li>
+    <li id="movie" class="item">영화</li>
+    <li id="vitamin" class="item">비타민</li>
+    <li id="gym" class="item">헬스장</li>
+    <li id="reading" class="item important">독서</li>
+  </ul>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+  <script>
+    $('#hello').on('click', sayHello);
+    
+    function sayHello() {
+      alert($('#hello').text());
+      $('#hello').css('background', '#7f8ff4');
+    }
+  </script>
+
+  <!-- '요소 추가하기' 에서 배운 걸 응용하여 요소를 이동하고 삭제 시키는 것도 가능  -->
+  <script>
+    // before 이용하여 영화의 순서를 청소 이전으로 오게 이동 : 원래 순서는 영화가 청소 밑에 있음(위에 html 코드 참고)
+    $('#cleaning').before($('#movie'));
+    // append 이용하여 todo-list의 자식의 마지막 부분에 important 클래스 요소들이 오도록 이동 : important 클래스를 포함한 코딩, 숙제, 독서 요소가 list의 마지막 부분에 오게됨
+    $('#todo-list').append($('.important'));
+    // remove 사용하여 요소 제거 : remove를 사용할 땐 잘못된 걸 지우지 않도록 주의하여 사용
+    $('#vitamin').remove();
+  </script>
+</body>
+</html>
