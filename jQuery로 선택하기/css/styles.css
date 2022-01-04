@@ -1,0 +1,26 @@
+.box {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px auto;
+  max-width: 23rem;
+  border: 2px solid #f6774f;
+}
+button {
+  border: none;
+  color: white;
+  margin: 1rem;
+  width: 150px;
+  height: 40px;
+}
+.color-1 {
+  background-color: #426fc5;
+}
+.color-2 {
+  background-color: #00897b;
+}
+.color-3 {
+  background-color: #f6774f;
+}
+.color-4 {
+  background-color: #e94043;
+}

@@ -1,0 +1,122 @@
+<!-- jQuery에는 '선택'과 '동작'이 있고, 선택의 방법으로 css선택자도 있지만 jQuery에서 제공하는 방법도 있음 -->
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <div class="box" id="box-1">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-2">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-3">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-4">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-5">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-6">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-7">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-8">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-9">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-10">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <div class="box" id="box-11">
+    <button class="color-1">-</button>
+    <button class="color-2">-</button>
+    <button class="color-3">-</button>
+    <button class="color-4">-</button>
+  </div>
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous">
+  </script>
+
+  <script>
+    $('#box-1 button').text('SELECTED!'); // filter,not 없이 모든 요소에 적용
+
+    // filter() : 괄호안의 조건으로 선택된 요소를 한번 더 걸러줌
+    $('#box-2 button').filter('.color-3').text('SELECTED!'); // 아이디가 box-2인 버튼 태그들 중에서 'color-3' 클래스 요소를 추려내서 text를 변경
+
+    // not() : filter의 반대, 괄호 안의 조건에 해당하는 요소를 제외하여 추려냄
+    $('#box-3 button').not('.color-3').text('SELECTED!'); // 아이디가 box-3인 버튼 태그들 중에서 'color-3' 클래스 요소를 제외하고 나머지 요소들만 text를 변경
+
+    // eq() : 선택된 요소들 중 n번째 요소 하나만 골라냄 -> 0부터 시작함 , ex) eq(1)일 경우 두 번째 요소에 해당
+    $('#box-4 button').eq(1).text('SELECTED!'); // 아이디가 box-3인 버튼 태그들 중에서 2번째 요소의 text를 변경
+
+    // parent() : 부모 요소를 찾아줌
+    $('#box-5 .color-1').css('background-color', 'black'); // box-5의 color-1 클래스 자신에 css 적용
+    $('#box-6 .color-1').parent().css('background-color', 'black'); // box-6의 color-1 클래스의 부모 요소에 css 적용
+
+    // children() : parent와 반대로 '직속 자식' 요소들을 찾아줌, 괄호 안에 조건을 넣으면 filter의 역할도 같이 해줌
+    $('#box-7').children().css('background-color', 'black'); // box-7의 자식 요소들 모두에게 css 적용
+    $('#box-8').children('.color-2').css('background-color', 'black'); // box-8의 '직속 자식' 요소들 중 color-2 클래스 요소에 css 적용
+
+    // find() : 자식요소, 자식 요소의 자식요소... 를 찾아줌
+    // children은 바로 한 단계 아래의 직속 자식만 찾아주지만, find는 자식의 자식의 자식들까지 해당 요소 이하의 모든 자식들을 찾아준다는 차이가 있음
+    $('#box-9').find('.color-2').css('background-color', 'black'); // box-9 이하의 자식 요소들 중 color-2 클래스 요소에 css 적용
+
+    // siblings() : 선택된 요소의 모든 이웃 요소들을 골라줌, 괄호 안에 조건을 넣으면 filter의 역할도 같이 해줌
+    $('#box-10 .color-2').siblings().css('background-color', 'black'); // box-10의 color-2 클래스의 모든 이웃 요소들에게 css 적용 ( color-2 클래스 요소는 제외 )
+    $('#box-11 .color-2').siblings('.color-4').css('background-color', 'black'); // box-11의 color-2 클래스의 이웃 요소들중 color-4 클래스 요소에 css 적용
+
+  </script>
+</body>
+</html>
