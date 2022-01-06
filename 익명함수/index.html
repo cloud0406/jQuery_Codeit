@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery</title>
+  <meta charset="UTF-8">
+
+  <script
+    src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+    crossorigin="anonymous"></script>
+
+  <!-- script를 맨 밑이 아닌 head 태그 안으로 적을 경우 코드는 위에서 아래로 읽어가므로 코드가 실행될 때 
+    body 태그안의 돔 객체들이 준비되어 있지 않아 제대로 실행이 안됨 -> 이를 해결하기 위해 'ready' 이벤트 사용 -->
+  <script>
+    // ready 이벤트로 인해 페이지 로딩이 끝난 후 , 즉 돔 객체들이 전부 준비 된 후에 함수를 실행시켜줌
+    $(document).ready(function() { // 계속 반복 되는 코드가 아닌 일회성 함수이므로 굳이 함수에 새로운 이름을 만들어 작성하지 않고 위와 같이 익명함수로 사용
+      $('#hello').on('click', function(){ // 일반적으로 '이벤트 핸들링'을 할 때 익명함수 자주 사용
+        alert($('#hello').text());
+        $('#hello').css('background', '#7f8ff4');
+      });
+    })
+  </script>
+
+</head>
+<body>
+  <button id="hello">Hello Codeit!</button>
+
+  <ul id="todo-list">
+    <li id="cleaning" class="item">청소</li>
+    <li id="coding" class="item important">코딩</li>
+    <li id="homework" class="item important">숙제</li>
+    <li id="movie" class="item">영화</li>
+    <li id="vitamin" class="item">비타민</li>
+    <li id="gym" class="item">헬스장</li>
+    <li id="reading" class="item important">독서</li>
+  </ul>
+</body>
+</html>
