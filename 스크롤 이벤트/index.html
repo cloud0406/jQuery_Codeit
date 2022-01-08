@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Scroll Function</title>
+    <link href="css/styles.css" rel="stylesheet">
+  </head>
+  <body>
+    <div class="top">
+      Fade away...
+    </div>
+    
+    <button class="go-to-top">Go To Top</button>
+    
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.min.js"
+      integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+      crossorigin="anonymous"></script>
+    <script>
+     $(window).on('scroll',function() { // 스크롤 할때 마다 함수 실행
+       console.log($(window).scrollTop());  // 현재 스크롤의 위치 나타내줌
+       
+       // opacity 는 투명도를 결정 : 1이면 완전히 불투명, 0이면 완전히 투명한 상태 
+       $('.top').css('opacity', 1 - $(window).scrollTop() / $('.top').height()); // 스크롤 내릴때마다 투명해지면서 200위치까지 내리면 완전히 투명해짐
+     })
+      
+    </script>
+  </body>
+</html>
