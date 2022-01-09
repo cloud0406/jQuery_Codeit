@@ -23,6 +23,12 @@
        // opacity 는 투명도를 결정 : 1이면 완전히 불투명, 0이면 완전히 투명한 상태 
        $('.top').css('opacity', 1 - $(window).scrollTop() / $('.top').height()); // 스크롤 내릴때마다 투명해지면서 200위치까지 내리면 완전히 투명해짐
      })
+
+     $('.go-to-top').on('click',function(){
+      // $(window).scrollTop(0);
+
+      $('html, body').animate({scrollTop: 0}, 500); // 스크롤 맨위(scrollTop: 0)로 500ms초 동안 이동
+     })
       
     </script>
   </body>
