@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>jQuery Animation</title>
+  <meta charset="utf-8" />
+  <link href="css/styles.css" rel="stylesheet" />
+</head>
+<body>
+
+<button>Start Animation</button>
+
+<div></div>
+
+<script
+  src="https://code.jquery.com/jquery-3.2.1.min.js"
+  integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+  crossorigin="anonymous"></script>
+
+<!-- Easing 애니메이션 이펙트 사용위한 jQueryUI 코드  -->
+<script
+  src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"
+  integrity="sha256-T0Vest3yCU7pafRw9r+settMBX6JkKN06dqBnpQ8d30="
+  crossorigin="anonymous"></script>
+
+<script> 
+$(document).ready(function() {
+  $("button").on('click', function() {
+    // // css 동시에 적용
+    $("div").animate({left: '250px', opacity: '0.5'}); // left 값이 250이 되도록 오른쪽으로 이동
+
+    // // css 순서대로 적용 : left -> opacity 순서에 따라 적용됨
+    // $("div").animate({left: '250px'});
+    // $("div").animate({opacity: '0.5'});
+
+    // // css 반복 적용 : 버튼 누를 때마다 이동
+    // $("div").animate({left: '+=250px'});
+
+    // // css 속도 조절 : 적용되는 속도 조절하기 (ms) , 숫자 외에도 slow, fast 사용 가능
+    // $("div").animate({left: '250px'}, 1000);
+
+    // // 애니메이션 이펙트(Easing) 적용 : ex) linear, swing, easeInBounce... 등등 
+    // // 'Easing' 사용하기 위해서는 jQueryUI 코드 script에 따로 추가해줘야 함
+    // $("div").animate({left: '250px'}, 1000, 'easeOutElastic');
+  });
+});
+</script> 
+
+</body>
+</html>
