@@ -15,6 +15,19 @@ function scrollHandler() {
       playlist.animate({'opacity' : '1'}, 1500); // 1500ms = 1.5초 동안 애니메이션 효과
     }
   }
+
+
+  
+  // for문 대신 each로 구현 가능 - 아래 코드 참고
+
+  // $('.playlist').each(function() {
+  //   let playlist = $(this);
+  //   let playlistHalf = playlist.position().top + playlist.outerHeight() / 2;
+
+  //   if(playlistHalf < windowBottom) {
+  //     playlist.animate({'opacity' : '1'}, 1500);
+  //   }
+  // })
 }
 
 // 스크롤 할때마다 실행 (처음 페이지 로딩될때는 실행 안되므로 플레이리스트 안보이는 상태)
