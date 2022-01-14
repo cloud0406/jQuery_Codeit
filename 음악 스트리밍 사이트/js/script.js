@@ -17,6 +17,11 @@ function scrollHandler() {
   }
 
 
+  if (windowBottom == $(document).height()) { // 스크롤이 브라우저 맨 밑으로 가게 되면
+    $('.to-top-btn').fadeIn(); // 위로 가는 버튼이 보이게함
+  } else { 
+    $('.to-top-btn').fadeOut(); // 평소에는 버튼 안보이게 설정
+  }
   
   // for문 대신 each로 구현 가능 - 아래 코드 참고
 
@@ -35,3 +40,8 @@ $(window).on('scroll',scrollHandler);
 
 // 페이지 로딩되자마자 한번 실행해서 플레이리스트 보이게함
 scrollHandler();
+
+
+$('.to-top-btn').on('click',function() { // 맨 위로 스크롤 이동시켜주는 동작
+  $('html, body').animate({scrollTop: 0}, 1000);
+});
